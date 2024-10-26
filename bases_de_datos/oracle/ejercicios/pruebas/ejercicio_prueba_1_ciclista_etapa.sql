@@ -26,3 +26,14 @@ CREATE TABLE ciclista_etapa (
     CONSTRAINT dni_cic FOREIGN KEY (DNI_ciclista) REFERENCES ciclista(DNI),
     CONSTRAINT cod_etp FOREIGN KEY (codigo_etapa) REFERENCES etapa(codigoEtapa)
 );
+
+-- Añadimos 2 ciclistas a la tabla ciclista
+INSERT INTO ciclista (DNI, nombre, telefono) VALUES ('01478523A','Pepe',658741236);
+INSERT INTO ciclista (DNI, nombre, telefono) VALUES ('45682379H','Alfonso',689523147);
+-- Creamos 3 etapas en la tabla etapa
+INSERT INTO etapa (codigoEtapa, fechaInicio, ciudades) VALUES (00001,'20/10/24','Valencia');
+INSERT INTO etapa (codigoEtapa, fechaInicio, ciudades) VALUES (00002,'21/10/24','Alicante');
+INSERT INTO etapa (codigoEtapa, fechaInicio, ciudades) VALUES (00003,'23/10/24','Murcia');
+-- Enlazamos en la tabla ciclista_etapa las claves primarias
+INSERT INTO ciclista_etapa (DNI_ciclista, codigo_etapa) VALUES ('01478523A',00001);
+INSERT INTO ciclista_etapa (DNI_ciclista, codigo_etapa) VALUES ('45682379H',00002);
