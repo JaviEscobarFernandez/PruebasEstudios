@@ -27,7 +27,7 @@ CREATE TABLE Clientes (
     cliente_id NUMBER(6) PRIMARY KEY,
     nombre VARCHAR2(30) NOT NULL,
     apellido VARCHAR2(60) NOT NULL,
-    email VARCHAR2(50) NOT NULL UNIQUE -- Hacemos los emails que sean unicos
+    email VARCHAR2(50)
 );
 
 CREATE TABLE Ventas_Clientes (
@@ -37,3 +37,9 @@ CREATE TABLE Ventas_Clientes (
     CONSTRAINT fk_venta_id FOREIGN KEY (venta_id) REFERENCES Ventas(venta_id),
     CONSTRAINT fk_cliente_id FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id)
 );
+
+-- Modificaciones
+-- Añadir una nueva columna: Supongamos que la tabla Cursos necesita una columna para almacenar la cantidad de créditos del curso.
+ALTER TABLE Cursos ADD (creditos NUMBER(6) DEFAULT 0 NOT NULL);
+-- Añadir una clave única: Añadir una restricción de clave única a la columna email en la tabla Profesores.
+ALTER TABLE Profesores MODIFY email VARCHAR2(50) NOT NULL UNIQUE;

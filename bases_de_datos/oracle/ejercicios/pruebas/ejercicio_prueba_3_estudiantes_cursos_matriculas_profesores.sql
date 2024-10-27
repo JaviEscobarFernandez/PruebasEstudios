@@ -34,3 +34,9 @@ CREATE TABLE Curso_Profesor (
     CONSTRAINT fk_curso_profesor_curso FOREIGN KEY (curso_id) REFERENCES Cursos(curso_id),
     CONSTRAINT fk_curso_profesor_profesor FOREIGN KEY (profesor_id) REFERENCES Profesores(profesor_id)
 );
+
+-- Modificaciones
+-- Modificar el tipo de dato de una columna: Cambiar el tipo de dato de la columna precio en la tabla Libros de NUMBER(6) a NUMBER(8, 2) para permitir decimales.
+ALTER TABLE LIBROS MODIFY precio NUMBER(8, 2);
+-- Eliminar una columna: Eliminar la columna nacionalidad de la tabla Autores.
+ALTER TABLE Autores DROP COLUMN nacionalidad;
