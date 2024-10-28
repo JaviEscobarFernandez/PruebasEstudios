@@ -111,3 +111,21 @@ CREATE OR REPLACE VIEW estadistica_equipo_B AS
 -- Consulta de views
 SELECT * FROM estadistica_equipo_A;
 SELECT * FROM estadistica_equipo_B;
+
+-- Consulta para listar la cantidad de jugadores por equipo
+SELECT e.nombre AS nombre_equipo, COUNT(je.DNI_jugador) AS jugadores_totales FROM
+    jugador_equipo je
+    INNER JOIN equipo e ON je.CIF_equipo = e.CIF
+    GROUP BY e.nombre;
+
+-- Consulta para mostrar distintos calculos de las estadisticas de los jugadores del equipo A
+SELECT DNI_jugador, SUM(puntos) AS puntos_totales,
+    AVG(puntos) AS media_puntos, MAX(puntos) AS maximo_puntos_temporada,
+    MIN(puntos) AS minimo_puntos_temporada
+    FROM estadistica_equipo_A GROUP BY DNI_jugador;
+
+-- Consulta para mostrar distintos calculos de las estadisticas de los jugadores del equipo B
+SELECT DNI_jugador, SUM(puntos) AS puntos_totales,
+    AVG(puntos) AS media_puntos, MAX(puntos) AS maximo_puntos_temporada,
+    MIN(puntos) AS minimo_puntos_temporada
+    FROM estadistica_equipo_B GROUP BY DNI_jugador;
