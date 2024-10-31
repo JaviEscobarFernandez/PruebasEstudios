@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calcular_dias", "calcular_dias.csproj", "{A78C3226-4CE3-46CF-A74D-C9FE386A50FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A78C3226-4CE3-46CF-A74D-C9FE386A50FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78C3226-4CE3-46CF-A74D-C9FE386A50FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78C3226-4CE3-46CF-A74D-C9FE386A50FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78C3226-4CE3-46CF-A74D-C9FE386A50FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {819DAF31-D1B2-4E26-BCD5-7DFEF7739D5B}
+	EndGlobalSection
+EndGlobal
