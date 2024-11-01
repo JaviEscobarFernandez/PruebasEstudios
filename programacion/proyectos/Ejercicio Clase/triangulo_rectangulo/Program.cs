@@ -31,6 +31,14 @@ namespace triangulo_rectangulo
                     Console.Write("*");
                 Console.WriteLine("");
             }
+
+            // Otra forma de realizarlo:
+            for (int i = 0; i < cateto; i++)
+            {
+                for (int j = 0; j < (cateto - i); j++)
+                    Console.Write("*");
+                Console.WriteLine("");
+            }
         }
     }
 }
