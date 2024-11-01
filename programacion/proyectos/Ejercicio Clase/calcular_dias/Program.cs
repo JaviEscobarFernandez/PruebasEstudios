@@ -23,13 +23,22 @@ namespace calcular_dias
                 return;
             }
 
-            // calcular dias, semanas, meses y años
-            int semanas = dias / 7;
-            int meses = dias / 30;
-            int años = dias / 365;
+            // Calcular años:
+            int years = dias / 365;
+            int restoDias = dias % 365;
+
+            // Calcular meses:
+            int meses = restoDias / 30;
+            restoDias = restoDias % 30;
+
+            // Calcular semanas:
+            int semanas = restoDias / 7;
+            restoDias = restoDias % 30;
+
+            // Calcular dias: (no es necesario, es el sobrante)
 
             // mostrar resultado
-            Console.WriteLine($"El resultado es: días: {dias}, semanas: {semanas}, meses: {meses}, años: {años}");
+            Console.WriteLine($"El resultado es: años: {years},  meses: {meses}, semanas: {semanas}, días: {restoDias}");
         }
     }
 }
