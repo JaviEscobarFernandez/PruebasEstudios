@@ -41,6 +41,31 @@ INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartam
 -- 3. Registra a un empleado llamado José García en la tabla Empleados. Este empleado tiene el idEmpleado 1003, nació el 8 de noviembre de 1982 y pertenece al departamento con idDepartamento 103 (Tecnología).
 INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento) VALUES (1003, 'José', 'García', '08-11-1982', 103);
 
+-- Version alternativa para insertar en campo DATE:
+DELETE FROM empleados WHERE idEmpleado IN (1001,1002,1003);
+INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento) VALUES (1001, 'Carlos', 'Ramírez', TO_DATE('1985-06-15', 'YYYY-MM-DD'), 101);
+INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento) VALUES (1002, 'Laura', 'Martínez', TO_DATE('1990-03-22', 'YYYY-MM-DD'), 102);
+INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento) VALUES (1003, 'José', 'García', TO_DATE('1982-11-08', 'YYYY-MM-DD'), 103);
+
+-- Mas ejercicios de clase:
+-- 1. Inserta un nuevo departamento llamado "Marketing" ubicado en el "Edificio D".
+INSERT INTO departamento (idDepartamento, nombre, ubicacion) VALUES (104, 'Marketing', 'Edificio D');
+-- 2. Agrega un nuevo empleado llamado "Laura Sánchez" con un salario de 3500 al departamento de Recursos Humanos.
+-- No tenemos salario, así que lo creo
+ALTER TABLE empleados ADD salario NUMBER(10) DEFAULT 1000;
+INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento, salario) VALUES (1004, 'Laura', 'Sanchez', TO_DATE('2000/11/05', 'yyyy/mm/dd'), 101, 3500);
+
+-- 3. Agrega un nuevo empleado llamado "Pedro Díaz" con un salario de 6000 al departamento de Finanzas.
+INSERT INTO empleados (idEmpleado, nombre, apellido, fechaNacimiento, idDepartamento, salario) VALUES (1005, 'Pedro', 'Díaz', TO_DATE('1992/03/05', 'yyyy/mm/dd'), 102, 6000);
+
+-- 4. Inserta un departamento de "Ventas" sin especificar la ubicación.
+-- Necesitamos que la ubicacion de departamento pueda ser not null
+ALTER TABLE departamento MODIFY ubicacion VARCHAR2(30) NULL;
+INSERT INTO departamento (idDepartamento, nombre) VALUES (105, 'Ventas');
+
+-- 5. Inserta un empleado "Luis Torres" sin apellido, con un salario de 3200, en el departamento de IT.
+INSERT INTO empleados (idEmpleado, nombre, fechaNacimiento, idDepartamento, salario) VALUES (1006, 'Luis Torres', TO_DATE('1994/05/08', 'yyyy/mm/dd'), 103, 3200);
+
 -- Eliminaciones:
 -- 1. Eliminar la tabla empleados
 DROP TABLE empleados;
