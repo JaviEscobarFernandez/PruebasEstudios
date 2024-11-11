@@ -1,19 +1,15 @@
 -- Ejercicios DDL
 /* 1. Crear las tablas
 Tabla de clientes:
-
 Debe tener las siguientes columnas: idCliente (clave primaria), nombre, direccion.
 
 Tabla de productos:
-
 Debe tener las siguientes columnas: idProducto (clave primaria), nombre, precio.
 
 Tabla de pedidos:
-
 Debe tener las siguientes columnas: idPedido (clave primaria), idCliente (clave foránea que referencia a idCliente en la tabla de clientes), fechaPedido.
 
 Tabla de detalles de pedidos:
-
 Debe tener las siguientes columnas: idDetalle (clave primaria), idPedido (clave foránea que referencia a idPedido en la tabla de pedidos), idProducto (clave foránea que referencia a idProducto en la tabla de productos), cantidad.
 */
 CREATE TABLE clientes (
@@ -62,7 +58,7 @@ ALTER TABLE detalles_pedidos DROP CONSTRAINT fk_detalles_pedido;
 ALTER TABLE detalles_pedidos DROP CONSTRAINT fk_detalles_producto;
 DROP TABLE detalles_pedidos;
 
-Ejercicio de DML
+-- Ejercicio de DML
 -- 1. Insertar datos
 -- Inserta datos en las tablas clientes, productos, pedidos y detalles_pedidos.
 INSERT INTO clientes (idcliente, nombre, direccion) VALUES (1, 'Juan Perez', 'Direccion 1');
@@ -104,36 +100,6 @@ DELETE FROM clientes WHERE idCliente = 1;
 
 -- 4. Seleccionar datos
 -- Realiza consultas para recuperar información específica de las tablas.
-
-
-Detalles de los ejercicios
-1. Insertar datos
-Inserta al menos 3 registros en la tabla clientes.
-
-Inserta al menos 3 registros en la tabla productos.
-
-Inserta al menos 2 registros en la tabla pedidos.
-
-Inserta al menos 3 registros en la tabla detalles_pedidos.
-
-2. Actualizar datos
-Actualiza el precio de un producto específico en la tabla productos.
-
-Actualiza el nombre de un cliente en la tabla clientes.
-
-3. Eliminar datos
-Elimina un cliente de la tabla clientes y asegúrate de eliminar también todos los pedidos y detalles de pedidos relacionados (asegúrate de tener las restricciones adecuadas para la eliminación en cascada).
-
-4. Seleccionar datos
-Recupera todos los datos de la tabla clientes.
-
-Recupera todos los productos cuyo precio sea mayor a un valor específico.
-
-Recupera todos los pedidos realizados por un cliente específico.
-
-Recupera el detalle de los pedidos (incluyendo el nombre del cliente y el producto) utilizando una consulta con JOIN.
-
-¡
 
 -- Eliminamos todo
 ALTER TABLE pedidos DROP CONSTRAINT fk_pedidos_cliente;
