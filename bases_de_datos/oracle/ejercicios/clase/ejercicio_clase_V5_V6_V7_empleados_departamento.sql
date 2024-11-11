@@ -66,6 +66,35 @@ INSERT INTO departamento (idDepartamento, nombre) VALUES (105, 'Ventas');
 -- 5. Inserta un empleado "Luis Torres" sin apellido, con un salario de 3200, en el departamento de IT.
 INSERT INTO empleados (idEmpleado, nombre, fechaNacimiento, idDepartamento, salario) VALUES (1006, 'Luis Torres', TO_DATE('1994/05/08', 'yyyy/mm/dd'), 103, 3200);
 
+-- Ejercicios de seleccion faltantes:
+-- 1. Consulta todos los empleados que trabajan en el departamento de IT (departamento con Departamento_ID = 2).
+SELECT * FROM empleados WHERE IdDepartamento=2;
+
+-- 2. Consulta el nombre de todos los departamentos ubicados en el "Edificio B".
+SELECT nombre FROM departamento WHERE ubicacion='Edificio B';
+
+-- 3. Consulta el salario total de todos los empleados.
+SELECT SUM(salario) FROM empleados;
+
+-- 4. Consulta el nombre y apellido de los empleados que ganan más de 4000, ordenado por salario de mayor a menor.
+SELECT nombre, apellido, salario FROM empleados WHERE salario > 4000 ORDER BY salario DESC;
+
+-- 5. Consulta el salario total por cada departamento.
+SELECT dep.nombre, SUM(empl.salario) AS salario_total FROM departamento dep
+INNER JOIN empleados empl ON dep.IdDepartamento = empl.IdDepartamento
+GROUP BY dep.nombre;
+
+-- 6. Obtén los empleados cuyo nombre empieza con "A" o "L", y ordénalos por apellido en orden ascendente.
+SELECT * FROM empleados WHERE nombre LIKE 'A%' OR nombre LIKE 'a%' OR nombre LIKE 'L%' OR nombre LIKE 'l%' ORDER BY apellido ASC;
+
+-- 1. Obtén los nombres de los departamentos que tienen al menos un empleado con un salario mayor a 5000.
+SELECT dep.nombre FROM departamento dep INNER JOIN empleados empl ON empl.IdDepartamento = dep.IdDepartamento WHERE empl.salario > 5000;
+
+-- 2. Consulta los nombres y apellidos de los empleados que ganan más que el empleado "Juan Pérez".
+-- Añado a Juan Pérez que no lo tenia.
+INSERT INTO empleados (IdEmpleado, nombre, apellido, fechaNacimiento, IdDepartamento, salario) VALUES (1007, 'Juan', 'Pérez', TO_DATE('15-10-1994', 'dd-mm-yyyy'), 104, 4500);
+SELECT nombre, apellido FROM empleados WHERE salario > (SELECT salario FROM empleados WHERE nombre='Juan' AND apellido='Pérez');
+
 -- Eliminaciones:
 -- 1. Eliminar la tabla empleados
 DROP TABLE empleados;
