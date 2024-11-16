@@ -1,15 +1,19 @@
 -- Ejercicios DDL
 /* 1. Crear las tablas
 Tabla de clientes:
+
 Debe tener las siguientes columnas: idCliente (clave primaria), nombre, direccion.
 
 Tabla de productos:
+
 Debe tener las siguientes columnas: idProducto (clave primaria), nombre, precio.
 
 Tabla de pedidos:
+
 Debe tener las siguientes columnas: idPedido (clave primaria), idCliente (clave foránea que referencia a idCliente en la tabla de clientes), fechaPedido.
 
 Tabla de detalles de pedidos:
+
 Debe tener las siguientes columnas: idDetalle (clave primaria), idPedido (clave foránea que referencia a idPedido en la tabla de pedidos), idProducto (clave foránea que referencia a idProducto en la tabla de productos), cantidad.
 */
 CREATE TABLE clientes (
@@ -58,7 +62,7 @@ ALTER TABLE detalles_pedidos DROP CONSTRAINT fk_detalles_pedido;
 ALTER TABLE detalles_pedidos DROP CONSTRAINT fk_detalles_producto;
 DROP TABLE detalles_pedidos;
 
--- Ejercicio de DML
+-- Ejercicios DML
 -- 1. Insertar datos
 -- Inserta datos en las tablas clientes, productos, pedidos y detalles_pedidos.
 INSERT INTO clientes (idcliente, nombre, direccion) VALUES (1, 'Juan Perez', 'Direccion 1');
@@ -98,8 +102,22 @@ DELETE FROM detalles_pedidos WHERE idPedido = (SELECT pedidos WHERE idCliente=1)
 DELETE FROM pedidos WHERE idCliente=1);
 DELETE FROM clientes WHERE idCliente = 1;
 
--- 4. Seleccionar datos
--- Realiza consultas para recuperar información específica de las tablas.
+/* 4. Seleccionar datos
+Recupera todos los datos de la tabla clientes.
+
+Recupera todos los productos cuyo precio sea mayor a un valor específico.
+
+Recupera todos los pedidos realizados por un cliente específico.
+
+Recupera el detalle de los pedidos (incluyendo el nombre del cliente y el producto) utilizando una consulta con JOIN. */
+SELECT * FROM clientes;
+SELECT * FROM productos WHERE precio > 1;
+SELECT * FROM pedidos WHERE idCliente=2;
+SELECT c.nombre, pr.nombre, dp.cantidad FROM pedidos p
+INNER JOIN clientes c ON c.idCliente = p.idCliente
+INNER JOIN detalles_pedidos dp ON dp.IdPedido = p.idPedido
+INNER JOIN productos pr ON pr.IdProducto = dp.idProducto;
+
 
 -- Eliminamos todo
 ALTER TABLE pedidos DROP CONSTRAINT fk_pedidos_cliente;
