@@ -95,6 +95,20 @@ SELECT dep.nombre FROM departamento dep INNER JOIN empleados empl ON empl.IdDepa
 INSERT INTO empleados (IdEmpleado, nombre, apellido, fechaNacimiento, IdDepartamento, salario) VALUES (1007, 'Juan', 'Pérez', TO_DATE('15-10-1994', 'dd-mm-yyyy'), 104, 4500);
 SELECT nombre, apellido FROM empleados WHERE salario > (SELECT salario FROM empleados WHERE nombre='Juan' AND apellido='Pérez');
 
+-- 1. Consulta el nombre de los empleados y el nombre de su departamento.
+SELECT e.nombre AS empleado, d.nombre AS departamento FROM empleados e
+INNER JOIN departamento d ON e.IdDepartamento=d.IdDepartamento;
+-- Seria lo mismo que:
+SELECT e.nombre, d.nombre FROM empleados e, departamento d WHERE e.IDdepartamento=d.IDdepartamento;
+
+-- 2. Obtener todos los empleados, incluso si no están asignados a un departamento.
+SELECT e.nombre AS empleado, d.nombre AS departamento FROM empleados e
+LEFT JOIN departamento d ON e.IdDepartamento=d.IdDepartamento;
+
+-- 3. Obtener todos los departamentos, incluso si no tienen empleados asignados.
+SELECT e.nombre AS empleado, d.nombre AS departamento FROM empleados e
+RIGHT JOIN departamento d ON e.IdDepartamento=d.IdDepartamento;
+
 -- Eliminaciones:
 -- 1. Eliminar la tabla empleados
 DROP TABLE empleados;
