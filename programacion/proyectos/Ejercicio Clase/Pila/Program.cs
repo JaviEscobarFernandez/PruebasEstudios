@@ -54,12 +54,12 @@ namespace Pila
                         AddPila(Console.ReadLine(), pilaVector);
                         break;
                     case "2":
-                    {
-                        string resultPila = SacarDeLaPila(pilaVector);
-                        if (resultPila != "*")
-                            Console.WriteLine($"El elemento que se ha sacado de la pila es: {resultPila}");
-                        break;
-                    }
+                        {
+                            string resultPila = SacarDeLaPila(pilaVector);
+                            if (resultPila != "*")
+                                Console.WriteLine($"El elemento que se ha sacado de la pila es: {resultPila}");
+                            break;
+                        }
                     case "3":
                         Console.WriteLine($"El tamaño de elementos de la pila es: {LongitudPila(pilaVector)}");
                         break;
@@ -98,26 +98,32 @@ namespace Pila
 
         static bool EstaVaciaPila(string[] pilaVector)
         {
-            int count = 0;
+            // int count = 0;
             // Recorremos el vector y contamos los elementos que tengan un valor asignado, si la cuenta es 0, retornamos true.
-            foreach (string p in pilaVector)
-            {
-                if (p != "*")
-                    count++;
-            }
-            return count == 0;
+            // foreach (string p in pilaVector)
+            // {
+            //     if (p != "*")
+            //         count++;
+            // }
+            // return count == 0;
+            // Solucion vista en clase mas optima (dejo la anterior comentada que es la que realice)
+            // Si la primera posicion del vector es *, significa que esta vacia
+            return pilaVector[0] == "*";
         }
 
         static bool EstaLlenaPila(string[] pilaVector)
         {
-            int count = 0;
+            // int count = 0;
             // Recorremos el vector y contamos los elementos que tengan un valor asignado, si la cuenta es el tamaño del vector, retornamos true.
-            foreach (string p in pilaVector)
-            {
-                if (p != "*")
-                    count++;
-            }
-            return count == pilaVector.Length;
+            // foreach (string p in pilaVector)
+            // {
+            //     if (p != "*")
+            //         count++;
+            // }
+            // return count == pilaVector.Length;
+            // Solucion vista en clase mas optima (dejo la anterior comentada que es la que realice)
+            // Si la ultima posicion del vector no es *, significa que esta llena
+            return pilaVector[pilaVector.Length - 1] != "*";
         }
 
         static void AddPila(string valor, string[] pilaVector)
@@ -130,16 +136,21 @@ namespace Pila
             }
 
             // Buscamos el primer hueco libre disponible y establecemos el valor.
-            for (int i = 0; i < pilaVector.Length; i++)
-            {
-                if (pilaVector[i] == "*")
-                {
-                    pilaVector[i] = valor;
-                    break;
-                }
-            }
+            // for (int i = 0; i < pilaVector.Length; i++)
+            // {
+            //     if (pilaVector[i] == "*")
+            //     {
+            //         pilaVector[i] = valor;
+            //         break;
+            //     }
+            // }
+            // Solucion vista en clase mas optima (dejo la anterior comentada que es la que realice)
+            // Buscamos la longitud de la pila (que ya hemos comprobado que no esta llena) y añadimos valor en dicho limite.
+            pilaVector[LongitudPila(pilaVector)] = valor;
+
             Console.WriteLine("Elemento añadido correctamente a la pila.\n");
         }
+
         static string SacarDeLaPila(string[] pilaVector)
         {
             string valorPila = "*";
@@ -151,16 +162,20 @@ namespace Pila
             }
 
             // Buscamos el ultimo valor añadido, lo eliminamos y retornamos dicho elemento
-            for (int i = pilaVector.Length - 1; i >= 0; i--)
-            {
-                if (pilaVector[i] != "*")
-                {
-                    valorPila = pilaVector[i];
-                    pilaVector[i] = "*";
-                    break;
-                }
-            }
-
+            // for (int i = pilaVector.Length - 1; i >= 0; i--)
+            // {
+            //     if (pilaVector[i] != "*")
+            //     {
+            //         valorPila = pilaVector[i];
+            //         pilaVector[i] = "*";
+            //         break;
+            //     }
+            // }
+            // Solucion vista en clase mas optima (dejo la anterior comentada que es la que realice)
+            // Buscamos la longitud de la pila (que ya hemos comprobado que no esta vacia) y eliminamos el valor anterior a ese.
+            int posicionLibre = LongitudPila(pilaVector) - 1;
+            valorPila = pilaVector[posicionLibre];
+            pilaVector[posicionLibre] = "*";
             return valorPila;
         }
 
