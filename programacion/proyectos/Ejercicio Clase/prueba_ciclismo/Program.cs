@@ -216,11 +216,8 @@ namespace prueba_ciclismo
             StreamWriter sw = new StreamWriter(fs2);
 
             // Realizamos las operaciones
-            string datos = "";
-            while ((datos = sr.ReadLine()) != null)
-            {
-                sw.WriteLine(datos);
-            }
+            string datos = sr.ReadToEnd();
+            sw.WriteLine(datos);
             Console.WriteLine("Archivo importado a excel correctamente.");
 
             // Cerramos la conexion (escritura)
