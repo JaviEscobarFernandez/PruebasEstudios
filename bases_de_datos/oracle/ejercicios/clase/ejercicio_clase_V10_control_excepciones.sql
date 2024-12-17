@@ -14,7 +14,7 @@ DECLARE
 BEGIN
     tabla_multiplicar(v_numero);
 END;
-
+/
 -- Ejercicio: Excepción evitar dividir por 0 (excepcion predefinida)
 DECLARE
     v_num1 NUMBER(3) := &numero1;
@@ -27,8 +27,7 @@ EXCEPTION
     WHEN ZERO_DIVIDE THEN
         DBMS_OUTPUT.PUT_LINE('ERROR: no se puede dividir entre 0');
 END;
-
-
+/
 -- Excepción no predefinida
 DECLARE
     v_pass NUMBER(30) := &password;
@@ -44,8 +43,7 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('ERROR: ' || sqlcode);
         DBMS_OUTPUT.PUT_LINE('ERROR: ' || sqlerrm);
 END;
-
-
+/
 -- Excepcion definida por el usuario
 DECLARE
     numero_negativo EXCEPTION;
@@ -59,4 +57,59 @@ EXCEPTION
     WHEN numero_negativo THEN
         DBMS_OUTPUT.PUT_LINE('ERROR: No se admiten números menores a 0');
 END;
-
+/
+-- Mas ejercicios
+SET SERVEROUTPUT ON;
+-- Excepción predefinida por Oracle
+DECLARE
+    v_num1 NUMBER(5) := &numero1;
+    v_num2 NUMBER(5) := &numero2;
+    v_resultado INTEGER(8,2) := 0;
+BEGIN
+    v_resultado := v_num1 / v_num2;
+    DBMS_OUTPUT.PUT_LINE('El resultado de dividir ' || v_num1 || ' entre ' || v_num2 || ' es: ' || v_resultado);
+EXCEPTION
+    WHEN ZERO_DIVIDE THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR: no se puede dividir entre 0');
+END;
+/
+-- Excepción NO predefinida por Oracle
+DECLARE
+    tablaNoExistente EXCEPTION;
+    PRAGMA EXCEPTION_INIT(tablaNoExistente, -00942);
+BEGIN
+    EXECUTE IMMEDIATE'DROP TABLE tablanoexistente1';
+EXCEPTION
+    WHEN tablaNoExistente THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR: la tabla que intentas borrar no existe.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE(SQLERRM);
+END;
+/
+-- Excepción definida por el usuario
+DECLARE
+    valorNegativo EXCEPTION;
+    v_num1 NUMBER(5) := &numero;
+BEGIN
+    IF v_num1 < 0 THEN
+        RAISE valorNegativo;
+    END IF;
+    CASE v_num1
+        WHEN 1 THEN DBMS_OUTPUT.PUT_LINE('Es válido');
+        WHEN 2 THEN DBMS_OUTPUT.PUT_LINE('Es válido');
+        WHEN 3 THEN DBMS_OUTPUT.PUT_LINE('Es válido');
+        ELSE DBMS_OUTPUT.PUT_LINE('No es válido');
+    END CASE;
+EXCEPTION
+    WHEN valorNegativo THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR: No se admiten valores negativos.');
+END;
+/
+-- Ejemplo para utilizar WHEN OTHERS y SQLERRM para obtener el codigo del error
+BEGIN
+    EXECUTE IMMEDIATE 'UPDATE tablanoexistente SET columna1=0 WHERE columna0=1';
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR: el mensaje/código es: ' ||SQLERRM);
+END;
+/
