@@ -1,0 +1,22 @@
+Un CICLO tiene una o varias asignaturas y cada ASIGNATURA pertenece a uno y solo un ciclo formativo.
+
+Un PROFESOR imparte o ninguna o varias asignaturas y una ASIGNATURA la imparte uno y solo un profesor.
+
+Para los atributos de cada entidad le pedimos que nos definan que atributos quiere y que nos pongan algún ejemplo para poder determinar el tipo de atributo, entonces nos dicen los siguiente:
+
+De cada CICLO guardamos:
+
+cod_ciclo (Código único de cada ciclo. Ejemplo: DAW)
+nom_ciclo (Nombre del Ciclo. Ejemplo: Técnico Superior en Desarrollo de Aplicaciones Web)
+De cada ASIGNATURA guardamos:
+
+cod_asig (Código único de cada asignatura. Ejemplo: DAW_M02)
+nom_asig (Nombre de la asignatura. Ejemplo: Bases de datos)
+precio (Precio de la asignatura. Ejemplo: 300€)
+res_apren (Los diferentes Resultados de Aprendizaje que tiene cada asignatura. Ejemplo: RA1, RA2, RA3, RA4, etc)
+De cada PROFESOR guardamos:
+
+id_profe (Identificador único del profesor. Ejemplo: 11456)
+nom_profe (Nombre completo del profesor. Ejemplo: Antonio Morales Díaz)
+fecha_alta (Fecha de alta en la empresa. Ejemplo: 15/10/2023)
+dias_antig (Días de Antigüedad en la empresa. Ejemplo: 365)
