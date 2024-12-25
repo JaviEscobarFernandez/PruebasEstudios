@@ -34,6 +34,13 @@ namespace operadores_logicos_and_or_difencias
             // Aquí se comprueba el segundo operando aunque es innecesario con |
             if (num1 == 0 | num2 < 10)
                 Console.WriteLine("test"); // Se imprimirá
+
+            // XOR             V          F          V          V      = (V^F = V^V = F^V =) V
+            bool xorTest = (1 == 1) ^ (1 == 2) ^ (1 == 1) ^ (1 == 1);
+            // Paso 1: True y False pasa a True
+            // Paso 2: True True pasa a False
+            // Paso 3: False y True pasa a True
+            Console.WriteLine(xorTest);
         }
     }
 }
