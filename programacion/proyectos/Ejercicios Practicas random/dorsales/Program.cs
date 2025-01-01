@@ -6,6 +6,12 @@ namespace dorsales
     {
         static void Main(string[] args)
         {
+            /* Programa de prueba para realizar el almacenamiento de dorsales y su listado
+             * Esta hecho con un string para almacenar los dorsales, utilizando un separador ";"
+             * Se ha decidido hacer asi debido a que no sabemos cuantos dorsales debemos establecer
+             * Y la idea era crear un array sin limite, por lo que con un string hacemos dicho fin :)
+             */
+
             Console.WriteLine("Hola, vamos a almacenar dorsales:");
             string opcion = "";
             // Utilizamos un string para almacenar los dorsales, separando cada numero de dorsal con ; al inicio y fin (;num_dorsal1;num_dorsal2;)
@@ -67,9 +73,9 @@ namespace dorsales
                 dorsal = 0;
                 return dorsal;
             }
-            if (dorsal <= 0 || dorsal > 200)
+            if (dorsal <= 0 || dorsal > 999)
             {
-                Console.WriteLine("ERROR: El dorsal debe ser un número entre 1 y 200.");
+                Console.WriteLine("ERROR: El dorsal debe ser un número positivo de máximo 3 cifras.");
                 dorsal = 0;
             }
             return dorsal;
