@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Ilerna>
+  <modulo>
+    <titulo>Lenguaje de marcas</titulo>
+    <grado>DAX</grado> <!-- Según la codificación interna de Ilerna Online -->
+    <numero>04</numero>
+    <UFs>
+      <UF unidad = "1">Programación con XML</UF>
+      <UF unidad = "2">Ámbitos de aplicación del XML</UF>
+      <UF unidad = "3">Sistemas de gestión de información empresarial</UF>
+    </UFs>
+  </modulo>
+</Ilerna>
