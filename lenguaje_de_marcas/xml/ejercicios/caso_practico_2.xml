@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ticket>
+    <header>
+        <title>TIQUE DE CAJA</title>
+        <seller>
+            <name>COOPERATIVA 123</name>
+            <cif>123456789A</cif>
+        </seller>
+        <date>20/06/2022</date>
+    </header>
+    <articles>
+        <title>ARTÍCULOS</title>
+        <item>
+            <quantity>5</quantity>
+            <product>Latas de anticongelante</product>
+        </item>
+    </articles>
+</ticket>
