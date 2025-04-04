@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- estableciendo el meta, fuente: https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_meta -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Pac Desarrollo: Lenguajes de Marcas">
+        <meta name="keywords" content="HTML,CSS,JavaScript">
+        <meta name="author" content="Javi Escobar Fernandez">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Establecemos titulo y favicon que aparecen en la pestaña del navegador -->
+        <title>Estopa - Sitio web oficial</title>
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+        <!-- Importamos el documento css -->
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- Importamos el documento js -->
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <section>
+            <!-- Utilizamos div para agrupar los elementos y establecer la clase encabezado para alinearlos con el estilo css clase encabezado -->
+            <div class="encabezado">
+                <h1>Confirmación de Compra</h1>
+            </div>
+            <br>
+            <!-- Utilizamos div para agrupar los elementos y establecer la clase secciones para alinearlos con el estilo css clase secciones -->
+            <div class="secciones">
+                <h2>Detalles de tu compra</h2>
+                <!-- Aqui se imprimiran los datos recabados en el formulario mediante javascript -->
+                <p class="detalles"><b>Nombre:</b> <span id="nombre"></span></p>
+                <p class="detalles"><b>Fecha:</b> <span id="fecha"></span></p>
+                <p class="detalles"><b>Lugar:</b> <span id="lugar"></span></p>
+                <p class="detalles"><b>Cantidad de Entradas:</b> <span id="cantidadEntradas"></span></p>
+                <p class="detalles"><b>Categoria:</b> <span id="categoria"></span></p>
+                <p class="detalles"><b>Método de Pago:</b> <span id="metodoPago"></span></p>
+                <!-- Boton adicional para volver a la pagina principal (index.html) -->
+                <div class="boton">
+                    <a href="index.html" target="_parent"><button type="button" class="boton-formulario">Volver a la página principal</button></a>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <!-- Seccion para el footer -->
+            <div class="footer">
+                <hr>
+                <p class="copyright">
+                    PAC Desarrollo: Lenguajes de Marcas - Realizada por Javi Escobar Fernández @2025
+                    <a href="https://www.instagram.com/" target="_blank"><img class="rrss" src="img/instagram.png"></a>
+                    <a href="https://www.whatsapp.com/" target="_blank"><img class="rrss" src="img/whatsapp.png"></a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

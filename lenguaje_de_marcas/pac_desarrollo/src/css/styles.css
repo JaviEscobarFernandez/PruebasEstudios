@@ -1,0 +1,200 @@
+/* GENERAL */
+/* Estilos headers (como se pide en el documento) */
+h1, h2 {
+    font-family: Verdana;
+}
+
+/* Estilo principal del body (como se pide en el documento) */
+body {
+    font-family: Calibri;
+    font-size: 18px;
+    background-color: white;
+}
+
+/* CONFIRMACION */
+/* estilo para los parrafos de la pagina de confirmacion */
+.detalles {
+    border: 3px solid #ececec;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 0 7px;
+}
+
+/* ENCABEZADO */
+/* alinear encabezado */
+.encabezado {
+    text-align: center;
+}
+
+/* Bordes redondeados y maximo de ancho 400px para el Banner (Como se pide en el documento) */
+#banner {
+    border-radius: 5px;
+    width: 400px;
+}
+
+/* SECCIONES */
+/* estilo para cada bloque de seccion principal (Intentando imitar el estilo del ejemplo) */
+.secciones {
+    border: 1px solid #ececec;
+    border-radius: 5px;
+    padding: 10px 30px 25px 30px;
+    margin: auto;
+    width: 50%;
+    box-shadow: 0px 0px 10px 5px #ececec; /* efecto de sombreado (me ha gustao :)) */
+    margin-top: 20px;
+}
+
+#descripcion {
+    /* flexbox para poner los elementos en linea para luego anidar como posicion absoluta el id logo y que sea en base a esta relativa*/
+    display: flex;
+    position: relative;
+}
+
+#logo {
+    width: 40px;
+    /* Establecemos posicion absoluta en base a la relativa de la id padre (descripcion) */
+    position: absolute;
+    left: 98%;
+    top: 75%;
+}
+
+/* FECHAS */
+/* Estilos para la tabla de fechas, fuente: https://www.w3schools.com/html/html_table_borders.asp */
+#tabla-fechas {
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    height: 50px;
+}
+
+#tabla-fechas th, #tabla-fechas td {
+    border: 2px solid black;
+    text-align: center;
+    height: 50px;
+}
+
+/* para establecer cada fila con colores alternos y el header de otro color (Como pide el documento) */
+.tabla-header {
+    background-color: #0356ae;
+    color: white;
+}
+
+.tabla-data1 {
+    background-color: #fdfeff;
+    color: black;
+}
+
+.tabla-data2 {
+    background-color: #f1f1f2;
+    color: black;
+}
+
+/* FORMULARIO */
+/* Estilos para el formulario */
+fieldset {
+    border: 3px solid #1191fc;
+    border-radius: 5px;
+    color: #1191fc;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.cuerpo-formulario {
+    color: black;
+    font-weight: normal;
+}
+
+.pagos-contenedor { /* fuente: https://www.w3schools.com/css/css3_flexbox.asp */
+    display: flex; /* Asegura que todos los métodos estén en una sola línea */
+    justify-content: space-around; /* Espaciado uniforme entre los métodos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 16px; /* Espacio opcional entre los divs */
+}
+
+.pagos-item {
+    display: flex; /* Alinea los elementos en una línea horizontal */
+    align-items: center; /* Asegura que todos los elementos estén centrados verticalmente */
+    gap: 8px; /* Espacio entre el checkbox, la imagen y el texto */
+}
+
+.pagos-item img {
+    vertical-align: middle; /* Alinea la imagen verticalmente al centro, para cuadrar el texto con la imagen mejor */
+}
+
+/* Contenedor del botón: para centrarlo y darle algo de margen */
+.boton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Dando estilo al boton, con algunos efectos, fuente: https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_hover */
+.boton-formulario {
+    background-color: #007bff;
+    color: white;
+    border: none; /* Sin bordes */
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer; /* para actualizar el cursor al posicionar el boton al icono de la mano */
+    transition-duration: 0.4s;
+}
+
+/* Efecto al pasar el ratón */
+.boton-formulario:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Aumentar el sombreado */
+}
+
+/* Al pulsar el boton dar un poco de efecto de pulsarse, fuente: https://www.geeksforgeeks.org/how-to-add-a-pressed-effect-on-button-click-in-css/ */
+.boton-formulario:active {
+    background-color: #003f7f; /* Cambiar color */
+    transform: scale(0.9); /* Reducir tamaño */
+}
+
+.terminos {
+    margin-top: 20px;
+}
+
+/* Estilo para las cajas de los formularios, fuente: https://www.w3schools.com/css/tryit.asp?filename=trycss_forms */
+input[type=text], input[type=date], select {
+  width: 100%;
+  padding: 12px 10px;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+.footer {
+    padding: 10px 30px 25px 30px;
+    margin: auto;
+    width: 50%;
+    margin-top: 30px;
+}
+
+/* fuente: https://web-eau.net/en/blog/10-best-footer-html-css-snippets */
+.copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 0;
+    /* flexbox para poner los elementos en linea */
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    border: 1px solid #ececec;
+    box-shadow: 0px 0px 5px 1px #ececec;
+    border-radius: 1px;
+}
+
+.rrss {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
