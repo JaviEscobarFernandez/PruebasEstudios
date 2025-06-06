@@ -1,0 +1,4 @@
+config.puerto.servidor = 8090
+config.texto.ambiente = Configurando ambiente de desarrollo
+config.autor.nombre = Javi
+config.autor.email = javi.correo@correo.com
