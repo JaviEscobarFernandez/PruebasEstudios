@@ -1,13 +1,11 @@
 package es.efjavi.poointerfaces.crud.repositorio;
 
-import es.efjavi.poointerfaces.crud.modelo.Cliente;
-
 import java.util.List;
 
-public interface CrudRepositorio {
-    List<Cliente> listarClientes();
-    Cliente getCliente(Integer id);
-    void crearCliente(Cliente cliente);
-    void editarCliente(Cliente cliente);
-    void eliminarCliente(Integer id);
+public interface CrudRepositorio<T> {
+    List<T> listar();
+    T obtener(Integer id);
+    void crear(T t);
+    void editar(T t);
+    void eliminar(Integer id);
 }
