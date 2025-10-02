@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HolaMundo/HolaMundo.iml" filepath="$PROJECT_DIR$/HolaMundo/HolaMundo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Matrices/Matrices.iml" filepath="$PROJECT_DIR$/Matrices/Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProyectoOrdenCompra/ProyectoOrdenCompra.iml" filepath="$PROJECT_DIR$/ProyectoOrdenCompra/ProyectoOrdenCompra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/almacen_venta_por_mayor/almacen_venta_por_mayor.iml" filepath="$PROJECT_DIR$/almacen_venta_por_mayor/almacen_venta_por_mayor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/almacen_verduleria/almacen_verduleria.iml" filepath="$PROJECT_DIR$/almacen_verduleria/almacen_verduleria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appFacturas/appFacturas.iml" filepath="$PROJECT_DIR$/appFacturas/appFacturas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/arrays/arrays.iml" filepath="$PROJECT_DIR$/arrays/arrays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carro_supermercado/carro_supermercado.iml" filepath="$PROJECT_DIR$/carro_supermercado/carro_supermercado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/colecciones/colecciones.iml" filepath="$PROJECT_DIR$/colecciones/colecciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/curso_java_udemy.iml" filepath="$PROJECT_DIR$/.idea/curso_java_udemy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/excepciones/excepciones.iml" filepath="$PROJECT_DIR$/excepciones/excepciones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paquetes/paquetes.iml" filepath="$PROJECT_DIR$/paquetes/paquetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/personas_company/personas_company.iml" filepath="$PROJECT_DIR$/personas_company/personas_company.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poo/poo.iml" filepath="$PROJECT_DIR$/poo/poo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practica_certificado_java/practica_certificado_java.iml" filepath="$PROJECT_DIR$/practica_certificado_java/practica_certificado_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyecto_catalogo/proyecto_catalogo.iml" filepath="$PROJECT_DIR$/proyecto_catalogo/proyecto_catalogo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vuelo/vuelo.iml" filepath="$PROJECT_DIR$/vuelo/vuelo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zoologico/zoologico.iml" filepath="$PROJECT_DIR$/zoologico/zoologico.iml" />
+    </modules>
+  </component>
+</project>
