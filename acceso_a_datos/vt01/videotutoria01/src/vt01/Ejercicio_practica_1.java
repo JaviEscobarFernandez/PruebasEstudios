@@ -38,11 +38,12 @@ public class Ejercicio_practica_1 {
 			System.out.println("2 - Crear fichero con nombre fichero_de_texto2.txt en nuevoDirectorio:");
 			System.out.println("3 - Eliminar fichero fichero_de_texto.txt:");
 			System.out.println("4 - Eliminar el directorio nuevoDirectorio:");
-			System.out.println("5 - Salir:");
+			System.out.println("5 - Eliminar fichero fichero_de_texto2.txt:");
+			System.out.println("6 - Salir:");
 			
 			opcion = sc.nextLine();
 			hacerAccion(opcion);
-		} while (!opcion.contentEquals("5"));
+		} while (!opcion.contentEquals("6"));
 		sc.close();
 	}
 	
@@ -61,6 +62,9 @@ public class Ejercicio_practica_1 {
 				eliminarDirectorio();
 				break;
 			case "5":
+				eliminarFicheroNuevo();
+				break;
+			case "6":
 				System.out.println("Finalizando...");
 				break;
 			default:
@@ -96,11 +100,19 @@ public class Ejercicio_practica_1 {
 			System.err.println("ERROR: no se ha podido borrar el fichero " + fichero.getName());
 	};
 
+	private static void eliminarFicheroNuevo() {
+		File fichero = new File(RUTA, "nuevoDirectorio/fichero_de_texto2.txt");
+		if (fichero.delete())
+			System.out.println("Fichero " + fichero.getName() + " borrado correctamente.");
+		else
+			System.err.println("ERROR: no se ha podido borrar el fichero " + fichero.getName());
+	};
+
 	private static void eliminarDirectorio() {
 		File directorio = new File(RUTA, "nuevoDirectorio");
 		if (directorio.delete())
 			System.out.println("Directorio " + directorio.getName() + " borrado correctamente.");
 		else
-			System.out.println("ERROR: no se ha podido borrar el directorio " + directorio.getName());
+			System.err.println("ERROR: no se ha podido borrar el directorio " + directorio.getName());
 	}
 }
