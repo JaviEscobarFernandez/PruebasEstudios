@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1018219797233",
+    "firebase_url": "https://maraton-cf2fa-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "maraton-cf2fa",
+    "storage_bucket": "maraton-cf2fa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018219797233:android:1f958cec99a320d6506750",
+        "android_client_info": {
+          "package_name": "com.example.maraton"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8SQZOGDYe5IWwk4AU_uAKucAm-eYbbQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
