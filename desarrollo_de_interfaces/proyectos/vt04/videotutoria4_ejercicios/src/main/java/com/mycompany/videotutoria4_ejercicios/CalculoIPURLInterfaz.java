@@ -32,84 +32,10 @@ public class CalculoIPURLInterfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dialogInfo = new javax.swing.JDialog();
-        panelnfoIp = new javax.swing.JPanel();
-        labelInfoIp = new javax.swing.JLabel();
-        dialogError = new javax.swing.JDialog();
-        panelError = new javax.swing.JPanel();
-        labelError = new javax.swing.JLabel();
         panelPrincipal = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
         textFieldUrl = new javax.swing.JTextField();
         buttonCheckIp = new javax.swing.JButton();
-
-        dialogInfo.setIconImage(null);
-
-        labelInfoIp.setText("la ip es...");
-
-        javax.swing.GroupLayout panelnfoIpLayout = new javax.swing.GroupLayout(panelnfoIp);
-        panelnfoIp.setLayout(panelnfoIpLayout);
-        panelnfoIpLayout.setHorizontalGroup(
-            panelnfoIpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelnfoIpLayout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(labelInfoIp, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
-        );
-        panelnfoIpLayout.setVerticalGroup(
-            panelnfoIpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelnfoIpLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(labelInfoIp, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout dialogInfoLayout = new javax.swing.GroupLayout(dialogInfo.getContentPane());
-        dialogInfo.getContentPane().setLayout(dialogInfoLayout);
-        dialogInfoLayout.setHorizontalGroup(
-            dialogInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelnfoIp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        dialogInfoLayout.setVerticalGroup(
-            dialogInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogInfoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelnfoIp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        labelError.setText("Error...");
-
-        javax.swing.GroupLayout panelErrorLayout = new javax.swing.GroupLayout(panelError);
-        panelError.setLayout(panelErrorLayout);
-        panelErrorLayout.setHorizontalGroup(
-            panelErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelErrorLayout.createSequentialGroup()
-                .addContainerGap(230, Short.MAX_VALUE)
-                .addComponent(labelError)
-                .addGap(128, 128, 128))
-        );
-        panelErrorLayout.setVerticalGroup(
-            panelErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelErrorLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(labelError)
-                .addContainerGap(102, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout dialogErrorLayout = new javax.swing.GroupLayout(dialogError.getContentPane());
-        dialogError.getContentPane().setLayout(dialogErrorLayout);
-        dialogErrorLayout.setHorizontalGroup(
-            dialogErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogErrorLayout.createSequentialGroup()
-                .addComponent(panelError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
-        );
-        dialogErrorLayout.setVerticalGroup(
-            dialogErrorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogErrorLayout.createSequentialGroup()
-                .addComponent(panelError, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -231,14 +157,8 @@ public class CalculoIPURLInterfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonCheckIp;
-    private javax.swing.JDialog dialogError;
-    private javax.swing.JDialog dialogInfo;
-    private javax.swing.JLabel labelError;
-    private javax.swing.JLabel labelInfoIp;
     private javax.swing.JLabel labelTitulo;
-    private javax.swing.JPanel panelError;
     private javax.swing.JPanel panelPrincipal;
-    private javax.swing.JPanel panelnfoIp;
     private javax.swing.JTextField textFieldUrl;
     // End of variables declaration//GEN-END:variables
 }
