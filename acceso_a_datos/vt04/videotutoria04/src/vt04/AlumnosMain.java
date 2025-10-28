@@ -2,6 +2,7 @@ package vt04;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -31,6 +32,11 @@ public class AlumnosMain {
 		ConnectDB connection = new ConnectDB();
 		Connection conn = connection.connectToDB();
 		try {
+			// Limpiamos la tabla alumnos inicialmente.
+			Statement stmn0 = conn.createStatement();
+			stmn0.executeUpdate("TRUNCATE TABLE `alumnos`");
+			stmn0.close();
+
 			// Creamos una consulta dinamica para establecer los valores de cada alumno.
 			PreparedStatement stmn = conn.prepareStatement("INSERT INTO `alumnos` (`ID`,`nombre`) VALUES (?, ?)");
 
@@ -44,6 +50,21 @@ public class AlumnosMain {
 
 			// Cerramos el prepared statement
 			stmn.close();
+
+			// Ahora vamos a recuperar los datos insertados
+			Statement stmn2 = conn.createStatement();
+
+			// Ejecutamos la sentencia select a la BD y lo establecemos en un ResultSet
+			ResultSet result = stmn2.executeQuery("SELECT * FROM `alumnos`");
+
+			// Recorremos los registros del ResultSet e imprimimos los datos obtenidos
+			while (result.next()) {
+				System.out.println("Alumno ID: " + result.getInt("ID") + " - Nombre: " + result.getString("nombre"));
+			}
+
+			// cerramos recursos
+			result.close();
+			stmn2.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally { // cerramos conexion con la bd.
