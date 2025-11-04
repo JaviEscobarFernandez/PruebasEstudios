@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/HibernateMappingDTD5.3//EN"
+    "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="vt05.Alumno" table="Alumnos" catalog="Prueba">
+        <id name="id">
+            <column name="id_alumno" />
+            <generator class="increment" />
+        </id>
+        <property name="nombre"></property>
+    </class>
+</hibernate-mapping>
