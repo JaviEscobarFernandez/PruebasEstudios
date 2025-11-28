@@ -1,0 +1,5 @@
+# Created at 2025-11-28T15:40:56.571
+Boot Manifest-JAR contains absolute paths in classpath 'E:\Estudios\Git\PruebasEstudios\desarrollo_de_interfaces\proyectos\vt09\videotutoria9_ejercicios\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
