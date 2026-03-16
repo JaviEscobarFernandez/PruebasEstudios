@@ -1,1 +1,2 @@
-<mx:Canvas label="Aceptar"></mx:Canvas>
+<Button Name=”btnEjemplo” Content=”BOTON” Width=”100” click= “btnEjemplo_Click()”
+        ToolTip=”Ejemplo de ayuda contextual” />
